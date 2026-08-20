@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -59,8 +58,20 @@ class NowPlayingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Now Playing')),
-      body: Center(
-        child: Text('Playing: $songTitle'),
+      body: Center (
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Playing: $songTitle'),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text('Stop and Go Back'),
+          ),
+         ],
+        ),
       ),
     );
   }
